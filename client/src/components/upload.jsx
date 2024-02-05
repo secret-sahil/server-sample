@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import { UploadToDB } from '../helper/helper'
 import toast, { Toaster } from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
+
 export default function Upload() {
+    const navigate = useNavigate()
+
+    // states
 	let [getFile, setFile] = useState(false)
 
 	function getExtension(filename) {
@@ -37,10 +42,15 @@ export default function Upload() {
 			success: <b>Uploaded Successfully...!</b>,
 			error: <b>Could not Uploaded!</b>,
 		})
+
+        uploadPromise.then((data)=>{
+            setFile(false)
+        })
 	}
 
 	function removeFile() {
 		setFile(false)
+        navigate(0)
 	}
 
 	return (
