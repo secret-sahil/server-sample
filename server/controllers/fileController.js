@@ -4,11 +4,11 @@ import multer from 'multer'
 
 // Multer middleware for handling file uploads
 const storage = multer.memoryStorage()
-const upload = multer({ storage: storage })
+const uploadFile = multer({ storage: storage })
 
 /** Custom middleware to handle file upload */
 export async function handleFileUpload(req, res, next) {
-	upload.single('file')(req, res, function (err) {
+	uploadFile.single('file')(req, res, function (err) {
 		if (err instanceof multer.MulterError) {
 			return res.status(400).send('Multer error: ' + err.message)
 		} else if (err) {
