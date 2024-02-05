@@ -1,6 +1,7 @@
 import {Router} from 'express'
 const router = Router()
 import * as controller from '../controllers/appController.js'
+import * as fileController from '../controllers/fileController.js'
 import { registerMail } from '../controllers/mailer.js'
 import Auth, { localVariables } from '../middleware/auth.js'
 /** POST Methods */
@@ -8,6 +9,8 @@ router.route('/register').post(controller.register)
 router.route('/registerMail').post(registerMail) // register mail
 router.route('/authenticate').post(controller.verifyUser,(req,res)=>res.end()) // authenticate user
 router.route('/login').post(controller.verifyUser,controller.login) // login in app
+    //-- File Handler
+router.route('/upload').post(upload.single('file'), fileController.upload)
 
 /** GET Methods */
 router.route('/user/:username').get(controller.getUser) // user with username
