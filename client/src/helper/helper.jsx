@@ -18,3 +18,13 @@ export async function UploadToDB(file) {
 		return Promise.reject({ error: 'Invalid file type.' })
 	}
 }
+
+/** Get file data */
+export async function FetchProducts() {
+	try {
+		const {data} = await axios.get('/api/products')
+		return Promise.resolve({data})
+	} catch (error) {
+		return Promise.reject({error: 'Internal Server Error'})
+	}
+}

@@ -1,7 +1,8 @@
 import {Router} from 'express'
 const router = Router()
-import * as controller from '../controllers/appController.js'
+import * as controller from '../controllers/userController.js'
 import * as fileController from '../controllers/fileController.js'
+import * as productsController from '../controllers/productsController.js'
 import { registerMail } from '../controllers/mailer.js'
 import Auth, { localVariables } from '../middleware/auth.js'
 /** POST Methods */
@@ -17,8 +18,8 @@ router.route('/user/:username').get(controller.getUser) // user with username
 router.route('/generateOTP').get(controller.verifyUser, localVariables, controller.generateOTP) //generate random OTP
 router.route('/verifyOTP').get(controller.verifyOTP) // verify generated OTP
 router.route('/createResetSession').get(controller.createResetSession) // reset all variables
-//-- Get File Details
-router.route('/createResetSession').get(controller.createResetSession) // 
+//-- Get product data
+router.route('/products').get(productsController.products) // get all products data
 
 
 /** PUT Methods */

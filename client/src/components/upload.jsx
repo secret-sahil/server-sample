@@ -45,6 +45,7 @@ export default function Upload() {
 
         uploadPromise.then((data)=>{
             setFile(false)
+			navigate('/products')
         })
 	}
 
