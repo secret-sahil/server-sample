@@ -10,7 +10,7 @@ router.route('/registerMail').post(registerMail) // register mail
 router.route('/authenticate').post(controller.verifyUser,(req,res)=>res.end()) // authenticate user
 router.route('/login').post(controller.verifyUser,controller.login) // login in app
     //-- File Handler
-router.route('/upload').post(upload.single('file'), fileController.upload)
+router.route('/upload').post(fileController.handleFileUpload, fileController.upload)
 
 /** GET Methods */
 router.route('/user/:username').get(controller.getUser) // user with username
