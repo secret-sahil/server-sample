@@ -19,7 +19,6 @@ export default function Upload() {
 	}
 
 	function handleUpload(data) {
-		console.log('working')
 		let File = data.target.files[0]
 		if (isXlsx(File.name)) {
 			setFile(File)
