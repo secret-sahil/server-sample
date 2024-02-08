@@ -20,9 +20,6 @@ router.route('/verifyOTP').get(controller.verifyOTP) // verify generated OTP
 router.route('/createResetSession').get(controller.createResetSession) // reset all variables
 //-- Get product data
 router.route('/products').get(productsController.products) // get all products data
-router.route('/products/:category').get(productsController.getProductsByCategroy) // get all products data by parent category
-router.route('/products/:category/:subcategory').get(productsController.getProductsBySubCategroy) // get all products data sub category inside parent category
-
 
 /** PUT Methods */
 router.route('/updateuser').put(Auth, controller.updateUser); // is use to update the user profile
