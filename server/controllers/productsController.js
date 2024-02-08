@@ -3,7 +3,7 @@ import productSchema from '../model/Products.model.js'
 /** GET: http://localhost:8080/api/products */
 export async function products(req, res) {
 	let {category,subcategory,sort,price_min,price_max} = req.query
-	console.log(category,subcategory,sort,price_min,price_max);
+	// console.log(category,subcategory,sort,price_min,price_max);
 	try {
 		let query = {};
 
