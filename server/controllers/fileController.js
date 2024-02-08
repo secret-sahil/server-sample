@@ -43,6 +43,7 @@ export async function upload(req, res) {
 		await productSchema.insertMany(sheetData)
 		res.status(200).send('File uploaded successfully.')
 	} catch (err) {
+		console.log(err);
 		res.status(500).send('Internal Server Error')
 	}
 }

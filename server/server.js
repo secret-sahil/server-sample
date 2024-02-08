@@ -16,7 +16,7 @@ const port = 8080;
 
 // HTTP GET Request
 app.get('/',(req,res)=>{
-    res.status(201).send('Home GET Request.')
+    res.status(201).send('SERVER IS RUNNING')
 })
 
 // api routes

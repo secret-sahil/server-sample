@@ -1,30 +1,51 @@
 import mongoose from 'mongoose'
 
 export const productSchema = new mongoose.Schema({
-	name: {
+	"products_title":{
 		type: String,
-		required: [true,'Please Provide a product name.'],
 	},
-	description: {
+    "products_description":{
 		type: String,
-		required: [true, 'Please Provide a product description.'],
 	},
-	price: {
+    "product_image_url":{
+		type: String,
+	},
+    "tags":{
+		type: String,
+	},
+    "parent_category_name":{
+		type: String,
+	},
+    "parent_category_image":{
+		type: String,
+	},
+    "sub_category_name":{
+		type: String,
+	},
+    "sub_category_image":{
+		type: String,
+	},
+    "variants1_id":{
 		type: Number,
-		required: [true, 'Please Provide product price'],
 	},
-	category: {
+    "variants1_sku":{
 		type: String,
-		required: [true, 'Please Provide product category'],
 	},
-	manufacturer: {
+    "variants1_weight":{
 		type: String,
-		required: [true, 'Please Provide product Manufacturer'],
 	},
-	stock: {
+    "variants1_mrp_price":{
 		type: Number,
-		default: 0,
+	},
+    "variants1_discount%":{
+		type: Number,
+	},
+    "variants1_sort":{
+		type: Number,
+	},
+    "variants1_unit_type":{
+		type: Number,
 	},
 })
 
-export default mongoose.model.Products || mongoose.model('Product', productSchema)
+export default mongoose.model.inventories || mongoose.model('inventory', productSchema)
