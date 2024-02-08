@@ -44,7 +44,7 @@ export const productSchema = new mongoose.Schema({
 		type: Number,
 	},
     "variants1_unit_type":{
-		type: Number,
+		type: String,
 	},
 })
 
